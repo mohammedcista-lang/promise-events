@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --brand-red: #d32f2f; /* الأحمر المستوحى من الشعار */
-            --brand-dark: #1a1a1a; /* الأسود الداكن للنصوص */
-            --brand-gray: #f4f4f4; /* خلفية رمادية فاتحة ونظيفة */
+            --brand-red: #d32f2f;
+            --brand-dark: #1a1a1a;
+            --brand-gray: #f4f4f4;
             --white: #ffffff;
             --transition: all 0.3s ease;
         }
@@ -90,7 +90,6 @@
             color: var(--brand-red);
         }
 
-        /* زر معلومات الاتصال البارز في الـ Navbar */
         .nav-contact-btn {
             background: var(--brand-red);
             color: white !important;
@@ -108,7 +107,7 @@
             transform: translateY(-2px);
         }
 
-        /* الواجهة الرئيسية (Hero Section) */
+        /* الواجهة الرئيسية */
         header {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
@@ -363,7 +362,6 @@
             transform: translateY(-3px);
         }
 
-        /* الفوتر */
         footer {
             background: #111;
             color: #fff;
@@ -372,7 +370,6 @@
             font-size: 0.95rem;
         }
 
-        /* التجاوب مع الجوال */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.5rem;
@@ -396,21 +393,21 @@
     <!-- شريط التنقل والشعار -->
     <navbar>
         <div class="logo-container">
-            <img src="1000299190.jpg" alt="شعار Promise">
+            <!-- الشعار -->
+            <img src="Screenshot_195806-20261014_WhatsApp.jpg" alt="شعار Promise">
             <div class="logo">Pro<span>mise</span></div>
         </div>
         <ul class="nav-links">
             <li><a href="#about">من نحن</a></li>
             <li><a href="#services">خدماتنا</a></li>
             <li><a href="#gallery">معرض الصور</a></li>
-            <!-- زر معلومات الاتصال المضاف حديثاً في الشريط العلوي -->
             <li><a href="#contact" class="nav-contact-btn"><i class="fa-solid fa-headset"></i> اتصل بنا</a></li>
         </ul>
     </navbar>
 
     <!-- الواجهة الرئيسية -->
     <header>
-        <div class="sub-tagline">لتنظيم الكرنفالات المتميزة[span_0](start_span)[span_0](end_span)</div>
+        <div class="sub-tagline">لتنظيم الكرنفالات المتميزة[span_3](start_span)[span_3](end_span)</div>
         <h1>مرحباً بكم في <span>Promise</span></h1>
         <p>نصنع لحظات الفرح ونخلّد أعظم إنجازاتكم الأكاديمية بتنظيم احترافي يليق بجهود سنينكم.</p>
         <a href="#contact" class="btn">احجز موعد حفلك الآن</a>
@@ -426,7 +423,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>فريق بروميس لتنظيم الكرنفالات والحفلات</h3>
-                    <p>نحن فريق <strong>Promise</strong>، متخصصون في تنظيم الكرنفالات المتميزة[span_1](start_span)[span_1](end_span) وحفلات التخرج الجامعية والمدرسية. نؤمن بأن يوم التخرج ليس مجرد احتفال، بل هو تتويج لمسيرة حافلة بالتعب والاجتهاد.</p>
+                    <p>نحن فريق <strong>Promise</strong>، متخصصون في تنظيم الكرنفالات المتميزة[span_4](start_span)[span_4](end_span) وحفلات التخرج الجامعية والمدرسية. نؤمن بأن يوم التخرج ليس مجرد احتفال، بل هو تتويج لمسيرة حافلة بالتعب والاجتهاد.</p>
                     <p>نضع بين أيديكم خبراتنا المتكاملة لإزالة كافة أعباء التخطيط عن كاهل الخريجين، لنترك لهم ولعوائلهم متعة عيش اللحظة بكل سعادة وفخر.</p>
                 </div>
                 <div class="about-img">
@@ -453,7 +450,7 @@
                 </div>
                 <div class="service-card">
                     <i class="fa-solid fa-microphone-lines"></i>
-                    ### الإضاءة وهندسة الصوت
+                    <h3>الإضاءة وهندسة الصوت</h3>
                     <p>تجهيز المسارح بأحدث أنظمة الإضاءة الملونة ومكبرات الصوت النقية لتجربة حماسية مذهلة.</p>
                 </div>
                 <div class="service-card">
@@ -474,20 +471,17 @@
             </div>
         </section>
 
-        <!-- معرض الصور -->
+        <!-- معرض الصور (بالأسماء الجديدة الدقيقة للصور) -->
         <section id="gallery">
             <div class="section-title">
                 <h2>معرض ذكريات الكرنفالات</h2>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="1000299131.jpg" alt="كرنفال بروميس 1">
+                    <img src="IMG-20261014-WA0083.jpg" alt="كرنفال بروميس 1">
                 </div>
                 <div class="gallery-item">
-                    <img src="1000299097.jpg" alt="كرنفال بروميس 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600&auto=format&fit=crop" alt="أجواء الاحتفال">
+                    <img src="IMG-20261014-WA0069.jpg" alt="كرنفال بروميس 2">
                 </div>
             </div>
         </section>
@@ -519,7 +513,7 @@
 
     <!-- الفوتر -->
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 - شركة <strong>Promise</strong> لتنظيم الكرنفالات المتميزة[span_2](start_span)[span_2](end_span).</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 - شركة <strong>Promise</strong> لتنظيم الكرنفالات المتميزة[span_5](start_span)[span_5](end_span).</p>
     </footer>
 
 </body>
