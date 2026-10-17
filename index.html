@@ -55,7 +55,6 @@
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--brand-red);
-            /* تأثير الإضاءة الخلفية والظلال للوجو */
             box-shadow: 0 0 20px rgba(225, 29, 37, 0.8), 0 0 40px rgba(225, 29, 37, 0.4);
             animation: pulse-glow 2s infinite alternate;
         }
@@ -351,23 +350,30 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 3.5rem;
+            gap: 2rem;
             margin-bottom: 3rem;
             flex-wrap: wrap;
         }
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.25rem;
+            gap: 10px;
+            font-size: 1.1rem;
             background: rgba(0,0,0,0.3);
-            padding: 12px 25px;
+            padding: 12px 20px;
             border-radius: 50px;
             border: 1px solid rgba(255,255,255,0.05);
+            color: #fff;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .contact-item:hover {
+            border-color: var(--brand-red);
+            transform: translateY(-3px);
         }
         .contact-item i {
             color: var(--brand-red);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
         
         /* زر الواتساب العايم مع نبض وإضاءة */
@@ -430,6 +436,20 @@
         }
         footer strong {
             color: var(--white);
+        }
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .footer-socials a {
+            color: #aaa;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+        .footer-socials a:hover {
+            color: var(--brand-red);
         }
 
         @media (max-width: 768px) {
@@ -557,10 +577,14 @@
                         <i class="fa-solid fa-location-dot"></i>
                         <span>الخرطوم، السودان</span>
                     </div>
-                    <div class="contact-item">
-                        <i class="fa-brands fa-instagram"></i>
-                        <span>@PROMISE_EVENTS_SD</span>
-                    </div>
+                    <a href="https://www.facebook.com/profile.php?id=61595578282915" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-facebook"></i>
+                        <span>فيسبوك</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@promise.sudan?_r=1&_t=ZS-9AYOLwXKq7W" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-tiktok"></i>
+                        <span>تيك توك</span>
+                    </a>
                 </div>
 
                 <a href="https://wa.me/249993970277?text=السلام%20عليكم%20بروميس%20عايز%20احجز%20موعد%20تخرج%20دفعتي" class="btn-whatsapp" target="_blank">
@@ -574,6 +598,10 @@
     <!-- الفوتر -->
     <footer>
         <p>جميع الحقوق محفوظة &copy; 2026 - شركة <strong>Promise</strong> لتنظيم الكرنفالات المتميزة - الخرطوم.</p>
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61595578282915" target="_blank" title="فيسبوك"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@promise.sudan?_r=1&_t=ZS-9AYOLwXKq7W" target="_blank" title="تيك توك"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
     </footer>
 
 </body>
