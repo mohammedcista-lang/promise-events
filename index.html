@@ -404,50 +404,6 @@
             transform: scale(1.08);
         }
 
-        /* آراء الخريجين (Testimonials) */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .t-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 20px;
-            position: relative;
-        }
-
-        .t-card p {
-            color: #ddd;
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .t-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .t-author i {
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .t-author h4 {
-            font-size: 1.1rem;
-            color: white;
-        }
-
-        .t-author span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
         /* نموذج الحجز السريع المباشر */
         .booking-section {
             background: linear-gradient(145deg, #161616 0%, #0d0d0d 100%);
@@ -680,7 +636,6 @@
             .bento-large { grid-column: span 1; }
             .about-box { grid-template-columns: 1fr; padding: 2rem; }
             .gallery-grid { grid-template-columns: 1fr; }
-            .testimonials-grid { grid-template-columns: 1fr; }
             .booking-form { grid-template-columns: 1fr; }
             .form-group.full { grid-column: span 1; }
             .nav-links { display: none; }
@@ -802,45 +757,6 @@
                 </div>
                 <div class="gallery-card">
                     <img src="IMG-20261014-WA0069.jpg" alt="كرنفال بروميس 2">
-                </div>
-            </div>
-        </section>
-
-        <!-- آراء الخريجين (Testimonials) -->
-        <section id="testimonials">
-            <div class="section-title">
-                <h2>رأي الدفعات السابقة شنو؟</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="t-card">
-                    <p>"والله يا بروميس ما قصرتوا نهائي! حفلة هندسة كانت أسطورية والدرون جاب لقطات خرافية. ما شلنا هم أي حاجة."</p>
-                    <div class="t-author">
-                        <i class="fa-solid fa-circle-user"></i>
-                        <div>
-                            <h4>محمد أحمد</h4>
-                            <span>خريج هندسة 2025</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="t-card">
-                    <p>"الالتزام في المواعيد والتنظيم المرتب بيخلي الواحد مطمن. كرنفال الألوان ده كان أحلى لحظة في عمرنا."</p>
-                    <div class="t-author">
-                        <i class="fa-solid fa-circle-user"></i>
-                        <div>
-                            <h4>رواء الصادق</h4>
-                            <span>ممثلة دفعة التمريض</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="t-card">
-                    <p>"شغل احترافي بمعايير عالمية. التصوير والفيديوهات نزلت التيك توك جابت تفاعل مجنون! شكراً بروميس."</p>
-                    <div class="t-author">
-                        <i class="fa-solid fa-circle-user"></i>
-                        <div>
-                            <h4>عمار حسن</h4>
-                            <span>خريج تقانة معلومات</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
