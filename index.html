@@ -124,22 +124,27 @@
             box-shadow: 0 0 15px var(--primary-glow);
         }
 
-        /* قائمة الخيارات المنسدلة للموبايل */
+        /* حاوية زر القائمة والقائمة المنسدلة */
+        .menu-container {
+            position: relative;
+        }
+
+        /* قائمة الخيارات المنسدلة متجهة لليمين تماماً وضمن الشاشة */
         .dropdown-menu {
             position: absolute;
-            top: 75px;
-            right: 0;
-            width: 260px;
-            background: rgba(18, 18, 18, 0.95);
+            top: 60px;
+            left: 0;
+            width: 250px;
+            background: rgba(18, 18, 18, 0.98);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.9);
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            padding: 1.2rem;
-            transform: translateY(-20px);
+            gap: 6px;
+            padding: 1rem;
+            transform: translateY(-15px);
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
@@ -155,8 +160,8 @@
         .dropdown-menu a {
             color: #ddd;
             text-decoration: none;
-            font-size: 1rem;
-            padding: 10px 15px;
+            font-size: 0.95rem;
+            padding: 10px 14px;
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -718,11 +723,11 @@
         </ul>
 
         <!-- زر الخيارات (ثلاثة خطوط) للهواتف والشاشات -->
-        <div style="position: relative;">
+        <div class="menu-container">
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="قائمة الخيارات">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <!-- القائمة المنسدلة للخيارات -->
+            <!-- القائمة المنسدلة للخيارات (متجهة لليمين تماماً) -->
             <div class="dropdown-menu" id="dropdownMenu">
                 <a href="#booking" onclick="toggleMenu()"><i class="fa-solid fa-calendar-check"></i> 🔥 احجز موعد دفعتك</a>
                 <a href="https://wa.me/249993970277?text=السلام%20عليكم%20بروميس%20عايز%20استفسر%20عن%20الباقات%20والاسعار" target="_blank" onclick="toggleMenu()"><i class="fa-solid fa-tags"></i> 📊 باقات وأسعار الخدمات</a>
@@ -946,7 +951,7 @@
         </div>
     </footer>
 
-    <!-- سكريبت تشغيل القائمة المنسدلة وإرسال الحجز للواتساب -->
+    <!-- سكريبت تشغيل القائمة وإرسال الحجز للواتساب -->
     <script>
         function toggleMenu() {
             let menu = document.getElementById('dropdownMenu');
@@ -955,7 +960,7 @@
 
         // إغلاق القائمة عند النقر خارجها
         window.onclick = function(event) {
-            if (!event.target.matches('.menu-toggle') && !event.target.matches('.fa-bars')) {
+            if (!event.target.matches('.menu-toggle') && !event.target.closest('.menu-toggle')) {
                 let menu = document.getElementById('dropdownMenu');
                 if (menu.classList.contains('active')) {
                     menu.classList.remove('active');
