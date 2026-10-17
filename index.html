@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promise | لتنظيم الكرنفالات المتميزة</title>
+    <title>Promise | لتنظيم التخاريج المتميزة</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --brand-red: #d32f2f;
-            --brand-dark: #1a1a1a;
+            --brand-dark: #111111;
             --brand-gray: #f4f4f4;
             --white: #ffffff;
             --transition: all 0.3s ease;
@@ -31,7 +31,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(26, 26, 26, 0.95);
+            background: rgba(17, 17, 17, 0.95);
             backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
@@ -87,9 +87,11 @@
             gap: 8px;
             box-shadow: 0 3px 10px rgba(211, 47, 47, 0.3);
         }
+        
+        /* الواجهة الرئيسية */
         header {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
                         url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
@@ -99,47 +101,49 @@
             color: #fff;
             padding: 0 1rem;
         }
+        .sub-tagline {
+            background: var(--brand-red);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
         header h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 900;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: #fff;
+            line-height: 1.3;
         }
         header h1 span {
             color: var(--brand-red);
         }
         header p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             max-width: 700px;
             margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        .sub-tagline {
-            display: inline-block;
-            background: var(--brand-red);
-            color: white;
-            padding: 0.4rem 1.2rem;
-            border-radius: 4px;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            color: #ccc;
         }
         .btn {
             display: inline-block;
             background: var(--brand-red);
             color: var(--white);
-            padding: 0.9rem 2.2rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px rgba(225,29,37,0.5);
             transition: var(--transition);
         }
         .btn:hover {
             transform: translateY(-3px);
             background: #b71c1c;
         }
+
         .container {
             max-width: 1200px;
             margin: auto;
@@ -170,6 +174,8 @@
             background: var(--brand-red);
             border-radius: 2px;
         }
+
+        /* من نحن */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -187,7 +193,7 @@
         }
         .about-text p {
             color: #555;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-size: 1.1rem;
         }
         .about-img img {
@@ -195,9 +201,11 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
+        /* الخدمات */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
         .service-card {
@@ -206,7 +214,12 @@
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
             border-top: 4px solid var(--brand-red);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
         .service-card i {
             font-size: 3rem;
@@ -222,6 +235,8 @@
             color: #555;
             font-size: 1rem;
         }
+
+        /* المعرض */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -239,23 +254,68 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: var(--transition);
         }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            opacity: 0.9;
+        }
+
+        /* ليه نحن */
+        .why-us {
+            background: #111;
+            color: #fff;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .why-us h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .why-us h2 span {
+            color: var(--brand-red);
+        }
+        .why-us p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .why-list {
+            list-style: none;
+            display: inline-block;
+            text-align: right;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+        .why-list li {
+            margin-bottom: 10px;
+        }
+
+        /* تواصل معنا */
         .contact-box {
             background: var(--brand-dark);
             color: #fff;
             padding: 4rem 2rem;
             border-radius: 20px;
             text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             border-bottom: 5px solid var(--brand-red);
+            margin-top: 3rem;
         }
         .contact-box h2 {
             color: #fff;
             margin-bottom: 1rem;
+            font-size: 2.2rem;
         }
         .contact-box p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            color: #ccc;
         }
         .contact-info {
             display: flex;
@@ -268,29 +328,35 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         .contact-item i {
             color: var(--brand-red);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
+        
         .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            left: 20px;
+            bottom: 25px;
+            left: 25px;
             background: #25D366;
             color: #fff;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 35px;
             text-decoration: none;
             z-index: 999;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            transition: var(--transition);
         }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
         .btn-whatsapp {
             display: inline-flex;
             align-items: center;
@@ -301,122 +367,24 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            transition: var(--transition);
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
+        .btn-whatsapp:hover {
+            background: #1ebe5d;
+            transform: translateY(-3px);
+        }
+
         footer {
             background: #111;
             color: #fff;
             text-align: center;
             padding: 2rem;
             font-size: 0.95rem;
+            border-top: 1px solid #222;
         }
+
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .about-content { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- زر واتساب عايم -->
-    <a href="https://wa.me/249993970277?text=السلام%20عليكم%20بروميس%20عايز%20احجز%20موعد%20تخرج%20دفعتي" class="whatsapp-float" target="_blank">💬</a>
-
-    <nav>
-        <div class="logo-container">
-            <img src="logo.jpg" alt="شعار Promise">
-            <div class="logo">Pro<span>mise</span></div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#about">من نحن</a></li>
-            <li><a href="#services">خدماتنا</a></li>
-            <li><a href="#gallery">معرض الصور</a></li>
-            <li><a href="#contact" class="nav-contact-btn"><i class="fa-solid fa-headset"></i> اتصل بنا</a></li>
-        </ul>
-    </nav>
-
-    <header>
-        <div class="sub-tagline">لتنظيم الكرنفالات المتميزة</div>
-        <h1>مرحباً بكم في <span>Promise</span></h1>
-        <p>نصنع لحظات الفرح ونخلّد أعظم إنجازاتكم الأكاديمية بتنظيم احترافي يليق بجهود سنينكم.</p>
-        <a href="#contact" class="btn">احجز موعد حفلك الآن</a>
-    </header>
-
-    <div class="container">
-        <section id="about">
-            <div class="section-title">
-                <h2>من نحن</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>فريق بروميس لتنظيم الكرنفالات والحفلات</h3>
-                    <p>نحن فريق <strong>Promise</strong>، متخصصون في تنظيم الكرنفالات المتميزة وحفلات التخرج الجامعية والمدرسية. نؤمن بأن يوم التخرج ليس مجرد احتفال، بل هو تتويج لمسيرة حافلة بالتعب والاجتهاد.</p>
-                    <p>نضع بين أيديكم خبراتنا المتكاملة لإزالة كافة أعباء التخطيط عن كاهل الخريجين.</p>
-                </div>
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="حفلات التخرج">
-                </div>
-            </div>
-        </section>
-
-        <section id="services">
-            <div class="section-title">
-                <h2>خدماتنا الاحترافية</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <h3>إدارة حفلات التخرج</h3>
-                    <p>إشراف شامل متكامل على فقرات الحفل ودخول الخريجين.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-camera-retro"></i>
-                    <h3>التصوير والتوثيق</h3>
-                    <p>فريق احترافي لتصوير الفوتوغراف والفيديو وصناعة ذكريات خالدة.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-microphone-lines"></i>
-                    <h3>هندسة الصوت والإضاءة</h3>
-                    <p>تجهيز المسارح بأحدث أنظمة الإضاءة ومكبرات الصوت.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="gallery">
-            <div class="section-title">
-                <h2>معرض ذكريات الكرنفالات</h2>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="IMG-20261014-WA0083.jpg" alt="كرنفال بروميس 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="IMG-20261014-WA0069.jpg" alt="كرنفال بروميس 2">
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="contact-box">
-                <h2>ابدأ التخطيط لحفل تخرجك اليوم!</h2>
-                <p>تواصل معنا الآن للاستفسار وحجز موعدك عبر الرقم:</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>0993970277</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/249993970277" class="btn-whatsapp" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> تواصل معنا عبر واتساب فوراً
-                </a>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 - شركة <strong>Promise</strong> لتنظيم الكرنفالات المتميزة.</p>
-    </footer>
-
-</body>
-</html>
+            header h1 { font-size: 2.2rem; }
+            
