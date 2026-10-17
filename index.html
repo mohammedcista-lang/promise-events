@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promise | لتنظيم التخاريج المتميزة</title>
+    <title>Promise | لتنظيم الكرنفالات المتميزة - الخرطوم</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --brand-red: #d32f2f;
-            --brand-dark: #111111;
-            --brand-gray: #f4f4f4;
+            --brand-red: #e11d25;
+            --brand-dark: #0d0d0d;
+            --brand-gray: #161616;
             --white: #ffffff;
-            --transition: all 0.3s ease;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         * {
             margin: 0;
@@ -22,41 +22,53 @@
             scroll-behavior: smooth;
         }
         body {
-            background-color: var(--brand-gray);
-            color: var(--brand-dark);
+            background-color: var(--brand-dark);
+            color: var(--white);
             line-height: 1.8;
+            overflow-x: hidden;
         }
+        
+        /* شريط التنقل مع لوجو منور وظلال فخمة */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(17, 17, 17, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(15px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0.8rem 5%;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(225, 29, 37, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .logo-container img {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--brand-red);
+            /* تأثير الإضاءة الخلفية والظلال للوجو */
+            box-shadow: 0 0 20px rgba(225, 29, 37, 0.8), 0 0 40px rgba(225, 29, 37, 0.4);
+            animation: pulse-glow 2s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(225, 29, 37, 0.6); }
+            100% { box-shadow: 0 0 30px rgba(225, 29, 37, 1), 0 0 50px rgba(225, 29, 37, 0.5); }
         }
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 900;
             color: #fff;
             letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
         .logo span {
             color: var(--brand-red);
@@ -65,33 +77,34 @@
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         .nav-links a {
             text-decoration: none;
-            color: #fff;
+            color: #ccc;
             font-weight: 600;
             transition: var(--transition);
         }
         .nav-links a:hover {
             color: var(--brand-red);
+            text-shadow: 0 0 10px rgba(225, 29, 37, 0.5);
         }
         .nav-contact-btn {
             background: var(--brand-red);
             color: white !important;
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
             font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 3px 10px rgba(211, 47, 47, 0.3);
+            box-shadow: 0 0 15px rgba(225, 29, 37, 0.4);
         }
-        
-        /* الواجهة الرئيسية */
+
+        /* الواجهة الرئيسية الهيرو */
         header {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+            background: linear-gradient(rgba(13, 13, 13, 0.75), rgba(13, 13, 13, 0.95)), 
                         url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
@@ -99,66 +112,71 @@
             align-items: center;
             text-align: center;
             color: #fff;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
         .sub-tagline {
             background: var(--brand-red);
             color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
+            padding: 8px 25px;
+            border-radius: 25px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 1.1rem;
+            box-shadow: 0 0 15px rgba(225, 29, 37, 0.5);
+            letter-spacing: 1px;
         }
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
             color: #fff;
-            line-height: 1.3;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
         }
         header h1 span {
             color: var(--brand-red);
+            text-shadow: 0 0 25px rgba(225, 29, 37, 0.6);
         }
         header p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin-bottom: 2rem;
-            color: #ccc;
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin-bottom: 2.5rem;
+            color: #ddd;
         }
         .btn {
             display: inline-block;
             background: var(--brand-red);
             color: var(--white);
-            padding: 1rem 2.5rem;
+            padding: 1rem 2.8rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.2rem;
-            box-shadow: 0 0 20px rgba(225,29,37,0.5);
+            box-shadow: 0 0 25px rgba(225, 29, 37, 0.6);
             transition: var(--transition);
         }
         .btn:hover {
-            transform: translateY(-3px);
-            background: #b71c1c;
+            transform: translateY(-5px) scale(1.05);
+            background: #ff1e26;
+            box-shadow: 0 0 35px rgba(225, 29, 37, 0.9);
         }
 
         .container {
             max-width: 1200px;
             margin: auto;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
         }
         section {
             padding: 4rem 0;
         }
         .section-title {
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 4rem;
         }
         .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--brand-dark);
+            font-size: 2.8rem;
+            color: var(--white);
             position: relative;
             display: inline-block;
             padding-bottom: 0.5rem;
@@ -169,10 +187,11 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 70px;
+            width: 80px;
             height: 4px;
             background: var(--brand-red);
             border-radius: 2px;
+            box-shadow: 0 0 10px var(--brand-red);
         }
 
         /* من نحن */
@@ -181,74 +200,80 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            background: var(--brand-gray);
+            padding: 3.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
         .about-text h3 {
-            font-size: 2rem;
-            color: var(--brand-dark);
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
         }
         .about-text p {
-            color: #555;
+            color: #bbb;
             margin-bottom: 1.2rem;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
         .about-img img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid rgba(225, 29, 37, 0.3);
         }
 
         /* الخدمات */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
         .service-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
+            background: var(--brand-gray);
+            padding: 3rem 2rem;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             transition: var(--transition);
-            border-top: 4px solid var(--brand-red);
+            border-top: 5px solid var(--brand-red);
+            border: 1px solid rgba(255,255,255,0.03);
         }
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(225, 29, 37, 0.2);
+            border-color: rgba(225, 29, 37, 0.5);
         }
         .service-card i {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--brand-red);
             margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(225, 29, 37, 0.4);
         }
         .service-card h3 {
-            font-size: 1.4rem;
-            color: var(--brand-dark);
+            font-size: 1.5rem;
+            color: var(--white);
             margin-bottom: 1rem;
         }
         .service-card p {
-            color: #555;
-            font-size: 1rem;
+            color: #aaa;
+            font-size: 1.05rem;
         }
 
-        /* المعرض */
+        /* معرض الصور */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 12px;
-            height: 300px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            height: 320px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             background: #000;
+            border: 2px solid rgba(255,255,255,0.05);
         }
         .gallery-item img {
             width: 100%;
@@ -257,134 +282,299 @@
             transition: var(--transition);
         }
         .gallery-item:hover img {
-            transform: scale(1.08);
+            transform: scale(1.1);
             opacity: 0.9;
         }
 
         /* ليه نحن */
         .why-us {
-            background: #111;
+            background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%);
             color: #fff;
-            padding: 5rem 2rem;
-            border-radius: 20px;
+            padding: 5rem 2.5rem;
+            border-radius: 25px;
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
+            border: 1px solid rgba(225, 29, 37, 0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
         .why-us h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
         }
         .why-us h2 span {
             color: var(--brand-red);
+            text-shadow: 0 0 15px rgba(225, 29, 37, 0.6);
         }
         .why-us p {
-            font-size: 1.2rem;
-            color: #ccc;
-            max-width: 700px;
-            margin: 0 auto 2rem;
+            font-size: 1.3rem;
+            color: #ddd;
+            margin-bottom: 2rem;
         }
         .why-list {
             list-style: none;
             display: inline-block;
             text-align: right;
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
-            color: #ddd;
+            font-size: 1.25rem;
+            color: #eee;
+            background: rgba(0,0,0,0.4);
+            padding: 2rem 3rem;
+            border-radius: 15px;
+            border-right: 4px solid var(--brand-red);
         }
         .why-list li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         /* تواصل معنا */
         .contact-box {
-            background: var(--brand-dark);
+            background: var(--brand-gray);
             color: #fff;
-            padding: 4rem 2rem;
-            border-radius: 20px;
+            padding: 5rem 2.5rem;
+            border-radius: 25px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-bottom: 5px solid var(--brand-red);
-            margin-top: 3rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border-bottom: 6px solid var(--brand-red);
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-top: 4rem;
         }
         .contact-box h2 {
             color: #fff;
-            margin-bottom: 1rem;
-            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         .contact-box p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
             color: #ccc;
         }
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2.5rem;
+            gap: 3.5rem;
+            margin-bottom: 3rem;
             flex-wrap: wrap;
         }
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.2rem;
+            gap: 12px;
+            font-size: 1.25rem;
+            background: rgba(0,0,0,0.3);
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
         .contact-item i {
             color: var(--brand-red);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
         
+        /* زر الواتساب العايم مع نبض وإضاءة */
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            left: 25px;
+            bottom: 30px;
+            left: 30px;
             background: #25D366;
             color: #fff;
-            width: 65px;
-            height: 65px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 35px;
+            font-size: 38px;
             text-decoration: none;
             z-index: 999;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+            animation: whatsapp-pulse 2s infinite;
             transition: var(--transition);
         }
+        @keyframes whatsapp-pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.08); box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
         .whatsapp-float:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
+            background: #22bf5b;
         }
 
         .btn-whatsapp {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             background: #25d366;
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 1.1rem 3rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
         }
         .btn-whatsapp:hover {
             background: #1ebe5d;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 0 35px rgba(37, 211, 102, 0.8);
         }
 
         footer {
-            background: #111;
-            color: #fff;
+            background: #080808;
+            color: #888;
             text-align: center;
-            padding: 2rem;
-            font-size: 0.95rem;
-            border-top: 1px solid #222;
+            padding: 2.5rem;
+            font-size: 1rem;
+            border-top: 1px solid #1a1a1a;
+        }
+        footer strong {
+            color: var(--white);
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            
+            header h1 { font-size: 2.3rem; }
+            .about-content { grid-template-columns: 1fr; padding: 2rem; }
+            .nav-links { display: none; }
+            .contact-info { flex-direction: column; gap: 1rem; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- زر واتساب عايم نابض وفخم -->
+    <a href="https://wa.me/249993970277?text=السلام%20عليكم%20بروميس%20عايز%20احجز%20موعد%20تخرج%20دفعتي" class="whatsapp-float" target="_blank" title="تواصل معنا عبر واتساب">💬</a>
+
+    <!-- شريط التنقل مع اللوجو المنور -->
+    <nav>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="شعار Promise">
+            <div class="logo">Pro<span>mise</span></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#gallery">معرض الصور</a></li>
+            <li><a href="#contact" class="nav-contact-btn"><i class="fa-solid fa-headset"></i> اتصل بنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- الواجهة الرئيسية -->
+    <header>
+        <div class="sub-tagline">لتنظيم الكرنفالات المتميزة - الخرطوم</div>
+        <h1>تخرجك حيبقى قصة يحكوها..<br><span>ولا حفلة وينسوها؟</span></h1>
+        <p>نحن في Promise ما بننظم حفلة بس.. نحن بنصنع لحظة حتتذكرها طول عمرك. من دخان ملون يغطي السماء، لتصوير بالدرون يخلي دفعتك ترند.</p>
+        <a href="#contact" class="btn">🔥 احجز موعد دفعتك الآن - المقاعد محدودة</a>
+    </header>
+
+    <div class="container">
+        
+        <!-- من نحن -->
+        <section id="about">
+            <div class="section-title">
+                <h2>مش مجرد شركة.. نحن دفعتكم</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>فريق بروميس لتنظيم الكرنفالات والحفلات</h3>
+                    <p>نحن فريق <strong>Promise</strong>، مرينا بنفس تعبكم.. سهر، امتحانات، مشاريع تخرج.</p>
+                    <p>عشان كده عارفين يوم التخرج ده ما يوم عادي. ده تتويج لـ 4 سنين تعب.</p>
+                    <p>نؤمن بأن يوم التخرج ليس مجرد احتفال، بل هو تتويج لمسيرة حافلة بالتعب والاجتهاد. خلّي علينا هم التنظيم، وانت استمتع بيومك ملك.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="حفلات التخرج">
+                </div>
+            </div>
+        </section>
+
+        <!-- الخدمات -->
+        <section id="services">
+            <div class="section-title">
+                <h2>خدماتنا الاحترافية</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>إدارة حفلات التخرج - Zero Stress</h3>
+                    <p>إشراف كامل من الألف للياء. تنظيم دخول الخريجين، ترتيب الفقرات، وتنسيق مع القاعة. انت ما حتشيل هم أي حاجة.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <h3>التصوير والتوثيق - خليها ترند</h3>
+                    <p>تصوير 4K + درون جوي + فيديو ريلز جاهز للتيك توك. بنوثق فرحتك بجودة سينمائية حتخلي دفعتك كلها تشير الفيديو.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>كرنفال الألوان - اللحظة المجنونة</h3>
+                    <p>لحظة البودرة الملونة، الدخان الملون، والقصاصات الذهبية. دي اللقطة الحتجيب مليون لايك.</p>
+                </div>
+                <div class="service-card" style="grid-column: 1 / -1; max-width: 650px; margin: 0 auto;">
+                    <i class="fa-solid fa-flag"></i>
+                    <h3>تغطية كاملة للموكب</h3>
+                    <p>من باب الجامعة لحد القاعة، موكبكم مؤمن بالتصوير والموسيقى. خلي الشارع كلو يعرف انكم اتخرجتو!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- معرض الصور -->
+        <section id="gallery">
+            <div class="section-title">
+                <h2>معرض ذكريات الكرنفالات</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="IMG-20261014-WA0083.jpg" alt="كرنفال بروميس 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20261014-WA0069.jpg" alt="كرنفال بروميس 2">
+                </div>
+            </div>
+        </section>
+
+        <!-- ليه نحن -->
+        <div class="why-us">
+            <h2>ليه تختار <span>Promise؟</span></h2>
+            <p>لأننا في السودان وعارفين جو السودان.</p>
+            <ul class="why-list">
+                <li>✅ ما بنتأخر زي الناس التانية</li>
+                <li>✅ أسعارنا واضحة، ما في مفاجآت</li>
+                <li>✅ بنعمل المستحيل عشانك - وده وعد Promise</li>
+            </ul>
+        </div>
+
+        <!-- تواصل معنا -->
+        <section id="contact">
+            <div class="contact-box">
+                <h2>مفاجآت بروميس عشانك نعمل المستحيل</h2>
+                <p>موسم تخرج 2026 بدا، ودفعات كتيرة حجزت.<br>ما تخلي دفعتك تحجز متأخر وتلقى المواعيد قفلت.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0993970277</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>الخرطوم، السودان</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@PROMISE_EVENTS_SD</span>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/249993970277?text=السلام%20عليكم%20بروميس%20عايز%20احجز%20موعد%20تخرج%20دفعتي" class="btn-whatsapp" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> تواصل معنا عبر واتساب فوراً
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - شركة <strong>Promise</strong> لتنظيم الكرنفالات المتميزة - الخرطوم.</p>
+    </footer>
+
+</body>
+</html>
