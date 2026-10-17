@@ -33,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        /* ناف بار عائم بتصميم زجاجي فاخر */
+        /* ناف بار زجاجي عائم */
         nav {
             position: fixed;
             top: 15px;
@@ -141,7 +141,7 @@
         }
 
         header h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
             line-height: 1.2;
@@ -154,10 +154,40 @@
         }
 
         header p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             max-width: 700px;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             color: var(--text-muted);
+        }
+
+        /* شريط البادجز السريع (Quick Badges Bar) */
+        .quick-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .q-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 50px;
+            color: #ddd;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .q-badge:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         .btn-global {
@@ -184,7 +214,7 @@
         .container {
             max-width: 1200px;
             margin: auto;
-            padding: 6rem 2rem;
+            padding: 5rem 2rem;
         }
 
         section {
@@ -193,11 +223,11 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
         }
 
         .section-title h2 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 900;
             position: relative;
             display: inline-block;
@@ -214,6 +244,37 @@
             background: var(--primary);
             border-radius: 2px;
             box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* شريط الإحصائيات (Stats Badges) */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
         }
 
         /* نظام Bento Grid الحديث للخدمات */
@@ -248,6 +309,19 @@
             transform: translateY(-8px);
             border-color: rgba(225, 29, 37, 0.4);
             box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(225,29,37,0.1);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px var(--primary-glow);
         }
 
         .bento-card i {
@@ -499,7 +573,8 @@
         }
 
         @media (max-width: 900px) {
-            header h1 { font-size: 2.6rem; }
+            header h1 { font-size: 2.3rem; }
+            .stats-bar { grid-template-columns: 1fr; }
             .bento-grid { grid-template-columns: 1fr; }
             .bento-large { grid-column: span 1; }
             .about-box { grid-template-columns: 1fr; padding: 2rem; }
@@ -532,10 +607,35 @@
         <div class="sub-tagline">لتنظيم الكرنفالات المتميزة - الخرطوم</div>
         <h1>تخرجك حيبقى قصة يحكوها..<br><span>ولا حفلة وينسوها؟</span></h1>
         <p>نحن في Promise ما بننظم حفلة بس.. نحن بنصنع لحظة حتتذكرها طول عمرك. من دخان ملون يغطي السماء، لتصوير بالدرون يخلي دفعتك ترند.</p>
+        
+        <!-- شريط البادجز السريع -->
+        <div class="quick-badges">
+            <a href="#services" class="q-badge"><i class="fa-solid fa-graduation-cap"></i> إدارة التخاريج</a>
+            <a href="#services" class="q-badge"><i class="fa-solid fa-camera-retro"></i> تصوير درون 4K</a>
+            <a href="#services" class="q-badge"><i class="fa-solid fa-palette"></i> كرنفال الألوان</a>
+            <a href="#contact" class="q-badge"><i class="fa-solid fa-phone"></i> احجز هسي</a>
+        </div>
+
         <a href="#contact" class="btn-global">🔥 احجز موعد دفعتك الآن - المقاعد محدودة</a>
     </header>
 
     <div class="container">
+
+        <!-- شريط الإحصائيات (Stats Badges) -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <h3>+130</h3>
+                <p>حفلة تخرج ناجحة</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>تنظيم Zero Stress</p>
+            </div>
+            <div class="stat-card">
+                <h3>5.0</h3>
+                <p>تقييم الخريجين والذكريات</p>
+            </div>
+        </div>
         
         <!-- من نحن -->
         <section id="about">
@@ -562,18 +662,19 @@
             </div>
             <div class="bento-grid">
                 <div class="bento-card">
+                    <span class="popular-badge">الأكثر طلباً</span>
                     <i class="fa-solid fa-graduation-cap"></i>
-                    <h3>إدارة حفلات التخرج</h3>
+                    <h3>إدارة حفلات التخرج - Zero Stress</h3>
                     <p>إشراف كامل من الألف للياء. تنظيم دخول الخريجين، ترتيب الفقرات، وتنسيق مع القاعة. انت ما حتشيل هم أي حاجة.</p>
                 </div>
                 <div class="bento-card">
                     <i class="fa-solid fa-camera-retro"></i>
-                    <h3>التصوير والتوثيق</h3>
+                    <h3>التصوير والتوثيق - خليها ترند</h3>
                     <p>تصوير 4K + درون جوي + فيديو ريلز جاهز للتيك توك. بنوثق فرحتك بجودة سينمائية حتخلي دفعتك كلها تشير الفيديو.</p>
                 </div>
                 <div class="bento-card">
                     <i class="fa-solid fa-palette"></i>
-                    <h3>كرنفال الألوان</h3>
+                    <h3>كرنفال الألوان - اللحظة المجنونة</h3>
                     <p>لحظة البودرة الملونة، الدخان الملون، والقصاصات الذهبية. دي اللقطة الحتجيب مليون لايك.</p>
                 </div>
                 <div class="bento-card bento-large">
